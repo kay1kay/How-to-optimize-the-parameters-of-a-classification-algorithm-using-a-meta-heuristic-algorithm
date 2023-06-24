@@ -68,9 +68,9 @@ _deepLearning2.m_: As with the previous file, the file is prepared to be classif
 
 _calculateAccuracy.m_: This function calculates the accuracy criterion by obtaining label data and forecast data.
 
-_ init.m_: This function generates random values for the Learning Rate and Momentum parameters, which will be used by CSA later.
+_init.m_: This function generates random values for the Learning Rate and Momentum parameters, which will be used by CSA later.
 
-_ divideData.m_: The function separates data for training sets and test sets before evaluation. This process is based on the cross validation of the K-Fold.
+_divideData.m_: The function separates data for training sets and test sets before evaluation. This process is based on the cross validation of the K-Fold.
 
 ## Contributing
 
