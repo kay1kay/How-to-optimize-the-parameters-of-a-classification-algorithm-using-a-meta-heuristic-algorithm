@@ -30,26 +30,26 @@ The aim of this small project is to improve two parameters of deep neural networ
 
 **Learning Rate:** The learning rate is a hyper parameter that controls the step size or the rate at which a deep neural network adjusts its parameters during training. It determines the magnitude of the updates made to the parameters based on the gradient of the loss function. A high learning rate can result in faster convergence but may cause overshooting, while a low learning rate may slow down training or get stuck in suboptimal solutions.
 
-**Momentum: ** Momentum is a parameter used in optimization algorithms, such as stochastic gradient descent (SGD) with momentum. It introduces a notion of inertia to the parameter updates. It accumulates a fraction of the previous update and adds it to the current update, allowing the optimization process to have momentum and accelerate in the relevant directions. This helps to overcome small local optima and results in faster convergence and more stable training.
+**Momentum:** Momentum is a parameter used in optimization algorithms, such as stochastic gradient descent (SGD) with momentum. It introduces a notion of inertia to the parameter updates. It accumulates a fraction of the previous update and adds it to the current update, allowing the optimization process to have momentum and accelerate in the relevant directions. This helps to overcome small local optima and results in faster convergence and more stable training.
 In the following, we explain CSA for understanding better. The Crow Search Algorithm (CSA) is a metaheuristic optimization algorithm inspired by the social behavior of crows. It mimics the foraging behavior of crows, which involves collaboration and information sharing within a group. 
 
 In CSA, a population of candidate solutions, referred to as crows, is initialized randomly in the search space. Each crow represents a potential solution to the optimization problem. The algorithm iteratively updates the positions of the crows based on their fitness values. During each iteration, the crows communicate and share information with each other. This collaboration is done through two main behaviors: local search and global search. In the local search behavior, crows explore their local neighborhoods by adjusting their positions using a local search operator. This allows them to exploit the local search space efficiently. In the global search behavior, crows exchange information globally by sharing their best solutions with each other. This helps in exploring promising regions of the search space. The movement of crows is guided by a set of mathematical equations that mimic the social interaction and movement patterns observed in crow flocks. These equations consider factors such as the position of other crows, the fitness values of the crows, and the influence of random perturbations. The algorithm continues to iterate until a termination criterion is met, typically a predefined number of iterations or reaching a satisfactory solution. At the end of the optimization process, the best solution found by the crows represents the optimal or near-optimal solution to the given problem. The Crow Search Algorithm is a population-based optimization method that offers a balance between exploration and exploitation of the search space. It has been applied to various optimization problems and has shown promising results in terms of finding good solutions efficiently.
 
-**Crow Search Algorithm for optimizing learning rate and momentum: **
+**Crow Search Algorithm for optimizing learning rate and momentum:**
 
-1. **Initialization: ** Define the number of crows (population size), the number of iterations, and the search space for the learning rate and momentum. Initialize the positions of the crows randomly within the search space.
+1.**Initialization:** Define the number of crows (population size), the number of iterations, and the search space for the learning rate and momentum. Initialize the positions of the crows randomly within the search space.
 
-2. **Fitness evaluation: ** For each crow, create a DNN using the corresponding learning rate and momentum. Train the network on the training data and evaluate its performance on the validation data. The fitness of a crow is inversely proportional to the validation error.
+2.**Fitness evaluation:** For each crow, create a DNN using the corresponding learning rate and momentum. Train the network on the training data and evaluate its performance on the validation data. The fitness of a crow is inversely proportional to the validation error.
 
-3. **Memory update: ** For each crow, update its memory if its current position has better fitness than its previous best position.
+3.**Memory update:** For each crow, update its memory if its current position has better fitness than its previous best position.
 
-4. **Crows' positions update: ** Update the position of each crow using the following rules:
+4.**Crows' positions update:** Update the position of each crow using the following rules:
 
 a. _Awareness phase_: Select a random crow and calculate the distance between the current crow and the selected one. If the distance is less than a predefined threshold, move the crow away from the selected one.
 
 b. _Search phase_: If the distance is greater than the threshold, update the crow's position considering its memory and the global best position found so far.
 
-5. **Termination: ** Repeat steps 2-4 for the predefined number of iterations. The best solution found during the iterations corresponds to the optimal learning rate and momentum for the DNN.
+5.**Termination:** Repeat steps 2-4 for the predefined number of iterations. The best solution found during the iterations corresponds to the optimal learning rate and momentum for the DNN.
 
 Using the Crow Search Algorithm for optimizing the learning rate and momentum can help find the best hyper parameter values that lead to better performance and faster convergence of the DNN. However, it is essential to consider that the search process can be computationally expensive, especially when dealing with large DNNs and extensive search spaces.
 
@@ -66,7 +66,7 @@ _deepLearning.m_: The file is prepared for a deep neural network classification 
 
 _deepLearning2.m_: As with the previous file, the file is prepared to be classified as a deep neural network, but there are some differences. The fitness function requires this to check the quality of production.
 
-_ calculateAccuracy.m_: This function calculates the accuracy criterion by obtaining label data and forecast data.
+_calculateAccuracy.m_: This function calculates the accuracy criterion by obtaining label data and forecast data.
 
 _ init.m_: This function generates random values for the Learning Rate and Momentum parameters, which will be used by CSA later.
 
